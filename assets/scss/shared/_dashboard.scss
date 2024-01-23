@@ -1,0 +1,228 @@
+/* Dashboard */
+
+.main-panel {
+  .content-wrapper {
+    .btn-outline-sales {
+      height: 35px;
+      width: 35px;
+      border-radius: 4px;
+      border: 2px solid #5e6eed;
+      i {
+        color: #5e6eed;
+      }
+      &.profit {
+        border: 2px solid #00cff4;
+      }
+    }
+    .header-right {
+      a {
+        color: $border-right-color;
+        text-decoration: none;
+        font-weight: $font-weight-bold;
+        &:first-child {
+          border-right: 2px solid $border-right-color;
+          .rtl & {
+            border: 0;
+            border-left: 2px solid $border-right-color;
+          }
+        }
+        p {
+          line-height: 1;
+        }
+      }
+      .btn-icon-text {
+        font-size: 14px;
+        background: theme-color(success);
+        padding: 0 19px 0 0;
+        border: 0;
+        color: $white;
+        display: flex;
+        align-items: center;
+        .rtl & {
+          padding: 0 0 0 19px;
+        }
+        i {
+          padding: 7px;
+          display: inline-block;
+          background: #069962;
+          margin-right: 15px;
+          border-radius: 0;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+          .rtl & {
+            margin: 0;
+            margin-left: 15px;
+            border-radius: 0;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+      }
+    }
+    .sales-header-right {
+      .head-count {
+        line-height: 0.5;
+        margin-top: 5px;
+      }
+    }
+    .flot-chart {
+      height: 216px;
+      .flot-text {
+        .flot-x-axis {
+          .tickLabel {
+            color: #6c7293;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    .card-img {
+      background-image: url("../../images/bg_card.jpg");
+      background-size: cover;
+    }
+    .star-color {
+      color: #fdb82c;
+    }
+    .br-theme-css-stars {
+      .br-widget {
+        a:after {
+          content: "\2605";
+          font-size: 15px;
+          color: #d2d2d2;
+        }
+      }
+    }
+    .br-theme-css-stars {
+      .br-widget {
+        a.br-selected:after {
+          color: #edb867;
+          font-size: 15px;
+        }
+      }
+    }
+    .card-stat {
+      background-image: url("../../images/dashboard/img_4.jpg");
+      background-size: cover;
+    }
+    .flot-bar-wrapper {
+      .flot-chart {
+        height: 88px;
+        width: 107px;
+      }
+    }
+    .color-card-wrapper {
+      .card-body {
+        position: relative;
+        padding-top: 100px;
+    
+        img.card-top-img {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 180px;
+          object-fit: cover;
+        }
+        .color-card-outer {
+          position: relative;
+          z-index: 2;
+          .color-card {
+            width: 112px;
+            height: 128px;
+            color: $white;
+            padding: 27px 0 0 12px;
+            .rtl & {
+              padding: 11px 12px 0 0;
+            }
+            @media (max-width: 576px) {
+              width: 95px;
+              height: 94px;
+              padding: 8px 0 0 12px;
+            }
+            i {
+              font-size: 20px;
+            }
+            &.primary {
+              background: #5e6eed;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.color-card-wrapper {
+  .card-body {
+    position: relative;
+    padding-top: 100px;
+
+    img.card-top-img {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 180px;
+      object-fit: cover;
+    }
+    .color-card-outer {
+      position: relative;
+      z-index: 2;
+      .color-card {
+        width: 112px;
+        height: 128px;
+        color: $white;
+        padding: 27px 0 0 12px;
+        @media (max-width: 576px) {
+          width: 95px;
+          height: 94px;
+          padding: 8px 0 0 12px;
+        }
+        i {
+          font-size: 20px;
+        }
+        &.primary {
+          background: #5e6eed;
+        }
+      }
+    }
+  }
+}
+
+.hexagon {
+  height: 26px;
+  position: relative;
+  .hex-mid {
+    height: 26px;
+    width: 52px;
+    font-size: 20px;
+    text-align: center;
+    &:before,
+    &:after {
+      content: "";
+      height: 0px;
+      width: 0px;
+      position: absolute;
+      left: 0;
+    }
+    &:before {
+      bottom: 100%;
+    }
+    &:after {
+      top: 100%;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .hexagon-#{$color} {
+    @include hexagon-variations($value);
+  }
+}
+@each $color, $value in $theme-colors {
+  .badge-#{$color} {
+    @include badge-variations($value);
+  }
+}
